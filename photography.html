@@ -1,0 +1,31 @@
+---
+layout: default
+title: Photography
+nav_id: photography
+permalink: /photography/
+---
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:16px;width:100%;vertical-align:middle">
+      <h2>Photography</h2>
+      <p>A rotating set of shots I've liked lately. Edit <code>_data/photos.yml</code> to add more.</p>
+
+      {% if site.data.photos and site.data.photos.size > 0 %}
+        <div class="photo-grid">
+          {% for photo in site.data.photos %}
+            <figure>
+              <a href="{{ photo.src | relative_url }}">
+                <img src="{{ photo.src | relative_url }}" alt="{{ photo.caption | default: 'photograph' }}">
+              </a>
+              {% if photo.caption %}
+                <figcaption>{{ photo.caption }}{% if photo.location %} — {{ photo.location }}{% endif %}</figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p><em>No photos yet. Add entries to <code>_data/photos.yml</code>.</em></p>
+      {% endif %}
+    </td>
+  </tr>
+</tbody></table>

@@ -1,0 +1,27 @@
+title: "{{FULL_NAME}}"
+description: "{{META_DESCRIPTION}}"
+url: "https://hazelcc.github.io"
+
+# Site-wide content — edit these once, they render across every page.
+full_name: "{{FULL_NAME}}"
+bio: "{{BIO}}"
+affiliation: "{{AFFILIATION}}"
+email: "{{EMAIL}}"
+cv_link: "{{CV_LINK}}"
+scholar_link: "{{SCHOLAR_LINK}}"
+github_user: "HazelCC"
+twitter_link: "{{TWITTER_LINK}}"
+linkedin_link: "{{LINKEDIN_LINK}}"
+profile_photo: "images/JonBarron.jpg"
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache

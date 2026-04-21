@@ -1,0 +1,10 @@
+# Add one entry per photo. `src` is required; `caption` and `location` are optional.
+# Put image files under images/photos/ (or anywhere in images/) and reference them here.
+
+- src: images/JonBarron.jpg
+  caption: Placeholder — replace with your own photo
+  location: Somewhere
+
+# - src: images/photos/vancouver-sunset.jpg
+#   caption: Sunset from Kits Beach
+#   location: Vancouver, BC

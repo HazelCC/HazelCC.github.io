@@ -1,61 +1,48 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+---
+layout: default
+nav_id: home
+---
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr style="padding:0px">
+    <td style="padding:2.5%;width:63%;vertical-align:middle">
+      <p class="name" style="text-align: center;">
+        {{ site.full_name }}
+      </p>
+      <p>
+        {{ site.bio }}
+      </p>
+      <p>
+        {{ site.affiliation }}
+      </p>
+      <p style="text-align:center">
+        <a href="mailto:{{ site.email }}">Email</a> &nbsp;/&nbsp;
+        <a href="{{ site.cv_link }}">CV</a> &nbsp;/&nbsp;
+        <a href="{{ site.scholar_link }}">Scholar</a> &nbsp;/&nbsp;
+        <a href="https://github.com/{{ site.github_user }}">Github</a> &nbsp;/&nbsp;
+        <a href="{{ site.twitter_link }}">Twitter</a> &nbsp;/&nbsp;
+        <a href="{{ site.linkedin_link }}">LinkedIn</a>
+      </p>
+    </td>
+    <td style="padding:2.5%;width:37%;max-width:37%">
+      <!-- TODO: replace images/JonBarron.jpg with your own profile photo (update site.profile_photo in _config.yml) -->
+      <a href="{{ site.profile_photo | relative_url }}"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="{{ site.profile_photo | relative_url }}" class="hoverZoomLink"></a>
+    </td>
+  </tr>
+</tbody></table>
 
-    <title>{{FULL_NAME}}</title>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:16px;width:100%;vertical-align:middle">
+      <h2>Research</h2>
+      <p>
+        {% raw %}{{RESEARCH_INTRO}}{% endraw %}
+      </p>
+    </td>
+  </tr>
+</tbody></table>
 
-    <meta name="description" content="{{META_DESCRIPTION}}">
-    <meta name="author" content="{{FULL_NAME}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
-
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  {{FULL_NAME}}
-                </p>
-                <p>
-                  {{BIO}}
-                </p>
-                <p>
-                  {{AFFILIATION}}
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:{{EMAIL}}">Email</a> &nbsp;/&nbsp;
-                  <a href="{{CV_LINK}}">CV</a> &nbsp;/&nbsp;
-                  <a href="{{SCHOLAR_LINK}}">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/HazelCC">Github</a> &nbsp;/&nbsp;
-                  <a href="{{TWITTER_LINK}}">Twitter</a> &nbsp;/&nbsp;
-                  <a href="{{LINKEDIN_LINK}}">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <!-- TODO: replace images/JonBarron.jpg with your own profile photo (same filename or update both references below) -->
-                <a href="images/JonBarron.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/JonBarron.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  {{RESEARCH_INTRO}}
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
+<table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+{% raw %}
 <!-- Example publication entry. Duplicate this <tr> block for each paper. Add bgcolor="#ffffd0" to the <tr> to highlight. -->
 <tr>
   <td style="padding:16px;width:20%;vertical-align:middle">
@@ -79,80 +66,61 @@
     </p>
   </td>
 </tr>
+{% endraw %}
+</tbody></table>
 
-          </tbody></table>
+<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+  <tr>
+    <td>
+      <h2>Miscellanea</h2>
+    </td>
+  </tr>
+</tbody></table>
 
-          
-					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
-            <tr>
-              <td>
-                <h2>Miscellanea</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            
-           
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #fcb97d;">
-								 <h2>Micropapers</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="{{MICROPAPER_LINK}}">{{MICROPAPER_TITLE}}</a>
-              </td>
-            </tr>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+{% raw %}
+  <tr>
+    <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+      <div class="colored-box" style="background-color: #fcb97d;">
+        <h2>Micropapers</h2>
+      </div>
+    </td>
+    <td style="padding:8px;width:80%;vertical-align:middle">
+      <a href="{{MICROPAPER_LINK}}">{{MICROPAPER_TITLE}}</a>
+    </td>
+  </tr>
 
+  <tr>
+    <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+      <div class="colored-box" style="background-color: #aaba9e;">
+        <h2>Recorded Talks</h2>
+      </div>
+    </td>
+    <td style="padding:8px;width:80%;vertical-align:center">
+      <a href="{{TALK_LINK}}">{{TALK_TITLE}}, {{TALK_YEAR}}</a>
+    </td>
+  </tr>
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #aaba9e;">
-								 <h2>Recorded Talks</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <a href="{{TALK_LINK}}">{{TALK_TITLE}}, {{TALK_YEAR}}</a>
-              </td>
-            </tr>
+  <tr>
+    <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+      <div class="colored-box" style="background-color: #c6b89e;">
+        <h2>Academic Service</h2>
+      </div>
+    </td>
+    <td style="padding:8px;width:80%;vertical-align:center">
+      <a href="{{SERVICE_LINK}}">{{SERVICE_ROLE}}, {{SERVICE_VENUE}} {{SERVICE_YEAR}}</a>
+    </td>
+  </tr>
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #c6b89e;">
-								 <h2>Academic Service</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <a href="{{SERVICE_LINK}}">{{SERVICE_ROLE}}, {{SERVICE_VENUE}} {{SERVICE_YEAR}}</a>
-              </td>
-            </tr>
-						
-						
-           
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #edd892;">
-								 <h2>Teaching</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <a href="{{TEACHING_LINK}}">{{TEACHING_ROLE}}, {{TEACHING_COURSE}} {{TEACHING_TERM}}</a>
-              </td>
-            </tr>
-            
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Template based on <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron's website</a>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>
+  <tr>
+    <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+      <div class="colored-box" style="background-color: #edd892;">
+        <h2>Teaching</h2>
+      </div>
+    </td>
+    <td style="padding:8px;width:80%;vertical-align:center">
+      <a href="{{TEACHING_LINK}}">{{TEACHING_ROLE}}, {{TEACHING_COURSE}} {{TEACHING_TERM}}</a>
+    </td>
+  </tr>
+{% endraw %}
+</tbody></table>

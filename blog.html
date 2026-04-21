@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+nav_id: blog
+permalink: /blog/
+---
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:16px;width:100%;vertical-align:middle">
+      <h2>Blog</h2>
+      <p>Notes, half-baked ideas, and whatever else I feel like writing down.</p>
+
+      {% if site.posts.size == 0 %}
+        <p><em>No posts yet. Drop a Markdown file into <code>_posts/</code> to get started.</em></p>
+      {% else %}
+        <ul class="post-list">
+          {% for post in site.posts %}
+            <li>
+              <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+              <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              {% if post.excerpt %}
+                <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </td>
+  </tr>
+</tbody></table>

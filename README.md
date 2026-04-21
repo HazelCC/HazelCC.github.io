@@ -1,19 +1,54 @@
 Personal academic website, hosted on GitHub Pages at https://HazelCC.github.io.
 
-## Preview locally
+Built with Jekyll (which GitHub Pages builds for you automatically on push).
 
-```
-python3 -m http.server
-```
+## Structure
 
-Then open http://localhost:8000.
+- `index.html` — home page (profile, research, miscellanea)
+- `blog.html` — index of blog posts, auto-generated from `_posts/`
+- `photography.html` — photo gallery, driven by `_data/photos.yml`
+- `_posts/` — one Markdown file per blog post, named `YYYY-MM-DD-slug.md`
+- `_layouts/` — shared HTML shells (`default.html` adds the nav; `post.html` wraps blog posts)
+- `_data/photos.yml` — list of photos shown on the photography page
+- `_config.yml` — site-wide variables (name, bio, email, social links)
+- `stylesheet.css` — all styles
+- `images/` — static images
 
 ## Editing
 
-- Content lives in `index.html`. Search for `{{...}}` placeholders (name, bio, affiliation, email, links, research intro, and example entries for publications / micropapers / talks / academic service / teaching) and fill them in.
-- The template ships with Jon Barron's profile photo at `images/JonBarron.jpg`. Drop your own photo in `images/` and update the two references in `index.html` (the `<a href>` and the `<img src>`) to point to it.
-- There is no dedicated "News" section in the template; if you want one, add an `<h2>News</h2>` block above the Research section following the same table pattern.
-- Styling lives in `stylesheet.css`.
+- **Your name, bio, links, email** — edit `_config.yml`. Changes propagate to every page.
+- **Research intro & publications** — edit `index.html`. Look for `{{...}}` placeholders.
+- **Profile photo** — drop a file into `images/` and update `profile_photo:` in `_config.yml`.
+- **New blog post** — add a file like `_posts/2026-05-01-my-post.md` with front matter:
+
+  ```markdown
+  ---
+  layout: post
+  title: "My post title"
+  date: 2026-05-01
+  ---
+
+  Post body in Markdown.
+  ```
+- **New photo** — put the file under `images/` and add an entry to `_data/photos.yml`.
+
+## Preview locally
+
+Install dependencies once:
+
+```
+bundle install
+```
+
+Then run:
+
+```
+bundle exec jekyll serve
+```
+
+Open http://localhost:4000.
+
+If you don't want to install Ruby/Bundler, you can still push to GitHub and let GitHub Pages build it — just note that you won't see a preview locally.
 
 ## Attribution
 

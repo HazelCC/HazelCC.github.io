@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="author" content="{{ site.full_name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ '/images/favicon/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ '/stylesheet.css' | relative_url }}">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <nav class="site-nav">
+            <a href="{{ '/' | relative_url }}"{% if page.nav_id == 'home' %} class="active"{% endif %}>Home</a>
+            <a href="{{ '/blog/' | relative_url }}"{% if page.nav_id == 'blog' %} class="active"{% endif %}>Blog</a>
+            <a href="{{ '/photography/' | relative_url }}"{% if page.nav_id == 'photography' %} class="active"{% endif %}>Photography</a>
+          </nav>
+
+          {{ content }}
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Template based on <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron's website</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html>
